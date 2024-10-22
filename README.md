@@ -8,11 +8,29 @@
 - Easy-to-use text styles for consistent typography.
 - Logging utilities for debugging.
 
-## Installation
+# Dime Utility - Custom Print and Trace Methods
 
-Add the following dependency in your `pubspec.yaml` file:
+This documentation provides an overview of how to use the `print` and `trace` methods from the `Dime` utility class in your Flutter project.
 
-```yaml
-dependencies:
-  dime:
-    path: /path/to/your/local/dime
+## Methods Overview
+
+### `Dime.print(String message)`
+
+- Prints the message to the console in **yellow**.
+- Use this method when you want to format your debug messages with a color.
+
+### `Dime.trace(String message)`
+
+- Prints the message to the console along with the **stack trace** information.
+- Use this method for logging, especially when you want to know where a certain message is coming from in your code.
+
+## How to Use
+
+### Example 1: Using `Dime.print`
+
+In your Dart code, call `Dime.print` to print a message in yellow:
+
+```dart
+void someFunction() {
+  Dime.print('This is a custom print message!');
+}
