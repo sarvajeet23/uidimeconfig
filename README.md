@@ -51,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Dime.init(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
+    Dime.init(
+    MediaQuery.of(context).size.width,
+    MediaQuery.of(context).size.height);
   }
 
   @override
