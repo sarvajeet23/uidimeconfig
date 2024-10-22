@@ -7,6 +7,7 @@
 - Responsive dimension calculations based on screen width and height.
 - Easy-to-use text styles for consistent typography.
 - Logging utilities for debugging.
+## How to use
 
 # Dime Utility - Custom Print and Trace Methods
 
@@ -33,4 +34,41 @@ In your Dart code, call `Dime.print` to print a message in yellow:
 ```dart
 void someFunction() {
   Dime.print('This is a custom print message!');
+}
+
+how to use  file:
+
+```yaml
+import 'package:flutter/material.dart';
+import 'package:uidimeconfig/uidimeconfig.dart';
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Dime.init(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('uidimeconfig Package Example'),
+      ),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(Dime.padding),
+          child: Text(
+            'Responsive Text',
+            style: TextStyles.heading1,
+          ),
+        ),
+      ),
+    );
+  }
 }
