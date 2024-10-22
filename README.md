@@ -7,12 +7,42 @@
 - Responsive dimension calculations based on screen width and height.
 - Easy-to-use text styles for consistent typography.
 - Logging utilities for debugging.
+## How to use
 
-## Installation
 
-Add the following dependency in your `pubspec.yaml` file:
+how to use  file:
 
 ```yaml
-dependencies:
-  dime:
-    path: /path/to/your/local/dime
+import 'package:flutter/material.dart';
+import 'package:uidimeconfig/uidimeconfig.dart';
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Dime.init(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('uidimeconfig Package Example'),
+      ),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(Dime.padding),
+          child: Text(
+            'Responsive Text',
+            style: TextStyles.heading1,
+          ),
+        ),
+      ),
+    );
+  }
+}
