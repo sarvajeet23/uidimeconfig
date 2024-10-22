@@ -1,4 +1,4 @@
-# Dime Package
+# Dynamic Screen Dime 
 
 **Dime** is a Flutter utility package designed to provide responsive dimensions and styling for your Flutter applications. It allows you to define dimensions based on screen size and easily access common text styles throughout your app.
 
